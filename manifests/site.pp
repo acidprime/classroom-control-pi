@@ -31,3 +31,14 @@ node default {
   
   notify { "Hello world! I am ${::fqdn}": }
 }
+
+node julie.puppetlabs.vm {
+  # This is where you can declare classes for all nodes.
+  # Example:
+  #   class { 'my_class': }
+  
+  # example code for the classroom
+  include examples::puppetize
+  
+  notify { "This will only be enforced on the Linux container.": }
+}
