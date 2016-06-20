@@ -1,5 +1,7 @@
 # `classroom-control-pi`
 
+Hey man!
+
 This is the classroom control repository for the Puppetizing Infrastructure class.
 
 ## Usage
