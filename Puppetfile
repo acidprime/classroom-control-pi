@@ -1,3 +1,4 @@
+mod 'puppetlabs/registry'
 # Install EPEL
 mod 'stahnma/epel'
 # Installs the acme/ohmyzsh module from the Puppet Forge
