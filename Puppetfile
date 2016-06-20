@@ -1,5 +1,7 @@
 mod 'puppetlabs/registry'
 
+mod 'stahnma/epel'
+
 # Installs the acme/ohmyzsh module from the Puppet Forge
 mod 'acme/ohmyzsh', '0.1.2'
 
