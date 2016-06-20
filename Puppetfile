@@ -9,3 +9,7 @@ mod 'stahnma/epel'
 mod 'arioch/redis'
 
 mod 'puppetlabs/registry'
+
+class profile::epel {
+include epel
+}
