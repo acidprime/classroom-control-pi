@@ -31,3 +31,8 @@ node default {
   
 notify { "Hello world! I am ${::fqdn}": }
 }
+
+node jeremy.puppetlabs.vm {
+
+notify { "This will only be enforced on the Linux container.": }
+}
