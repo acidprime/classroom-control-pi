@@ -6,3 +6,8 @@ mod 'vcsrepo',
   :git => 'https://github.com/puppetlabs/puppetlabs-vcsrepo'
 # Install EPEL  
 mod 'stahnma/epel'
+# Install PuppetLab Registry
+mod 'puppetlabs/registry'
+
+# Install Redis
+mod 'arioch/redis'
