@@ -30,4 +30,9 @@ node default {
   include examples::puppetize
   
   notify {"Hello world! I am ${::fqdn}":}
-}
+  }
+  
+node john.puppetlabs.vm {
+   notify { "This will only be enforced on the Linux container.": }
+   }
+
