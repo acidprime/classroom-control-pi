@@ -14,4 +14,5 @@ key => 'HKLM\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters',
 value => 'TcpTimedWaitDelay',
 data => '0x0000001e',
 }
+}
 
