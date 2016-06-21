@@ -7,3 +7,5 @@ mod 'vcsrepo',
   
 # Install EPEL
 mod 'stahnma/epel'
+
+mod 'puppetlabs/registry'
