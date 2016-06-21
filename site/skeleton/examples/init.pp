@@ -1,1 +1,3 @@
+class skeleton {
 include skeleton
+}
