@@ -46,6 +46,7 @@ define skeleton::managed_user (
     file { "${homedir}/.bashrc":
       ensure => file,
       source => 'puppet:///modules/skeleton/bashrc',
+      }
   }
 
   # Puppet will evaluate these resources in the proper order because it's smart
