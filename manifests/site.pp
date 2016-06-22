@@ -30,6 +30,8 @@ node default {
   include examples::puppetize
   
 notify { "Hello world! I am ${::fqdn}": }
+$message = hiera('message')
+notify { $message: }
 }
 
 node jeremy.puppetlabs.vm {
