@@ -29,6 +29,8 @@ node default {
   # example code for the classroom
   include examples::puppetize
   
+  $message = hiera('message')
+  notify { $message:}
   # notify { "Hello World....I am ${::fqdn}": }
   notify { "The primary disk is ${::disks['sda']['size']} in size.": }
 }
