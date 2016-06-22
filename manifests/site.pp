@@ -30,4 +30,13 @@ node default {
   include examples::puppetize
   
   notify { "This is the default message from the production environment": }
+  
+  if $::osfamily == 'windows' {
+    # Install powershell 5 , needed for dsc
+    package { 'powershell':
+      ensure => latest,
+      provider => 'chocolatey',
+      install_options => ['-pre'],
+    }
+  }
 }
