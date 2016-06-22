@@ -7,14 +7,14 @@ class dsciis {
   }
 
   # Translate these DSC Powershell resources into Puppet code below
-  WindowsFeature iis {
-    Ensure    = 'Present'
-    Name      = 'Web-Server'
+  dsc_windowsfeature{'iis':
+    dsc_ensure => 'Present',
+    dsc_name => 'Web-Server',
   }
   
-  WindowsFeature iisscriptingtools {
-    Ensure    = 'Present',
-    Name      = 'Web-Scripting-Tools',
+  dsc_windowsfeature{'iisscriptingtools':
+    dsc_ensure => 'Present',
+    dsc_name => 'Web-Scripting-Tools',
   }
   
   # The index file is managed as a native Puppet file resource.
