@@ -29,8 +29,8 @@ node default {
   # example code for the classroom
   include examples::puppetize
   
-  notify { "This is the default message from the production environment": }
-  
+  notify { "The primary disk is ${::disks['sda']['size']} in size.": }
+
   if $::osfamily == 'windows' {
     # Install powershell 5 , needed for dsc
     package { 'powershell':
