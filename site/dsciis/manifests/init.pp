@@ -1,24 +1,27 @@
 class dsciis {
 
   # TODO: add the correct name to this resource so DSC can trigger reboots
-  reboot { ???:
-    when    => pending,
+  reboot { 'dsc_reboot':
+    when    => 'pending',
     timeout => 15,
   }
 
-  package { 'dotnet4.5.2':
-    ensure   => latest,
-    provider => 'chocolatey',
-    notify   => Reboot['dsc_reboot'],
+  # Translate these DSC Powershell resources into Puppet code below
+  dsc_windowsfeature { 'iis':
+    dsc_ensure    = 'present'
+    dsc_name      = 'Web-Server'
+  }
+  
+  dsc_windowsfeature { 'iisscriptingtools'
+    dsc_ensure    => 'present',
+    dsc_name      => 'Web-Scripting-Tools',
+  }
+  
+  # The index file is managed as a native Puppet file resource.
+  file { 'C:/inetpub/wwwroot/index.html':
+    ensure  => 'file',
+    source  => 'puppet:///modules/dsciis/index.html',
+    require => Dsc_windowsfeature['iis'],
   }
 
-  vcsrepo { 'C:/inetpub/puppetize':
-    ensure   => present,
-    provider => git,
-    source   => 'https://github.com/puppetlabs-education/asp-starter-site.git',
-  }
-
-  # Translate the provided DSC Powershell script into Puppet code below
-
-  # don't forget to add the appropriate relationships
 }
