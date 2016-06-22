@@ -32,5 +32,5 @@ node default {
   $message = hiera('message')
   notify { $message:}
   # notify { "Hello World....I am ${::fqdn}": }
-  notify { "The primary disk is ${::disks['sda']['size']} in size.": }
+  # notify { "The primary disk is ${::disks['sda']['size']} in size.": }
 }
