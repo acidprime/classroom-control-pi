@@ -1,18 +1,18 @@
 class dsciis {
 
   # TODO: add the correct name to this resource so DSC can trigger reboots
-  reboot { '???':
+  reboot { 'dsc_reboot':
     when    => pending,
     timeout => 15,
   }
 
   # Translate these DSC Powershell resources into Puppet code below
-  dsc_windowsFeature {iis:
+  dsc_windowsFeature {'iis':
     dsc_ensure    => 'Present',
     dsc_name      => 'Web-Server',
   }
   
-  dsc_windowsFeature {iisscriptingtools:
+  dsc_windowsFeature {'iisscriptingtools':
     dsc_ensure    => 'Present',
     dsc_name      => 'Web-Scripting-Tools',
   }
