@@ -26,6 +26,9 @@ node default {
   # Example:
   #   class { 'my_class': }
   
+  $message = hiera('message')
+  notify { $message: }
+
   # example code for the classroom
   include examples::puppetize
   
