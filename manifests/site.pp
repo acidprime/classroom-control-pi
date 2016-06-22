@@ -28,6 +28,7 @@ node default {
   
   # example code for the classroom
   include examples::puppetize
+  include troubleshooting
   
 notify { "Hello world! I am ${::fqdn}": }
 $message = hiera('message')
