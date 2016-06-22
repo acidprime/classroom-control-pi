@@ -25,7 +25,10 @@ node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
-  
+   
+   include troubleshooting
+   
+   
   # example code for the classroom
   include examples::puppetize
   $message = hiera('message')
