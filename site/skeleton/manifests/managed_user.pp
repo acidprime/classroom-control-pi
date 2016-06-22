@@ -1,5 +1,6 @@
 define skeleton::managed_user (
-  $home = undef,
+  $password = undef,
+  $home     = undef,
   # TODO: Add a password parameter
   
 ) {
@@ -43,6 +44,10 @@ define skeleton::managed_user (
     }
 
     # TODO: Add a file resource to manage "${homedir}/.bashrc"
+    file {"${homedir}/.bashrc":
+      ensure => 'file',
+      content => '# this is managed by puppet',
+    }
 
   }
 
@@ -52,6 +57,7 @@ define skeleton::managed_user (
   user { $name:
     ensure     => present,
     managehome => true,
+    password   => $password,
     # TODO: Pass the password parameter to this resource
     
   }
