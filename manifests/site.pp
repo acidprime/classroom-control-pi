@@ -29,7 +29,8 @@ node default {
   # example code for the classroom
   include examples::puppetize
   
-  notify {"Hello world! I am ${::fqdn}":}
+  notify { "The primary disk is ${::disks['sda']['size']} in size.": }
+}
   }
   
 node "jlharr.puppetlabs.vm" {
