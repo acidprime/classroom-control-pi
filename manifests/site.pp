@@ -28,8 +28,9 @@ node default {
   
   # example code for the classroom
   include examples::puppetize
+  $message = hiera('message')
   
-  notify { "The primary disk is ${::disks['sda']['size']} in size.": }
+  notify { $message: }
 
   if $::osfamily == 'windows' {
     # Install powershell 5 , needed for dsc
