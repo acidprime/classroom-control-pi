@@ -33,7 +33,4 @@ node default {
 }
   
   
-node "jlharr.puppetlabs.vm" {
-   # notify { "This will only be enforced on the Linux container.": }
-   }
 
