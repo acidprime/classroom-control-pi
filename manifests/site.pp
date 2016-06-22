@@ -38,5 +38,8 @@ node default {
       provider => 'chocolatey',
       install_options => ['-pre'],
     }
+    reboot { 'powershell_reboot':
+      subscribe       => Package['powershell'],
+    }
   }
 }
